@@ -18,7 +18,7 @@ const StyledBookingDataBox = styled.section`
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
 
-  overflow: hidden;
+  overflow: au;
 `;
 
 const Header = styled.header`
