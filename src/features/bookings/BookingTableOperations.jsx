@@ -6,12 +6,13 @@ function BookingTableOperations() {
   return (
     <TableOperations>
       <Filter
-        filterField="status"
+        filterFields="status"
         options={[
           { value: "all", label: "All" },
           { value: "checked-out", label: "Checked out" },
           { value: "checked-in", label: "Checked in" },
           { value: "unconfirmed", label: "Unconfirmed" },
+          { value: "cancelled", label: "Cancelled" },
         ]}
       />
 
