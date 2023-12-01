@@ -120,6 +120,22 @@ export async function updateBooking(id, obj) {
   return data;
 }
 
+export async function createBookingApi(newCabin, id) {
+  let query = supabase.from("bookings");
+
+  // A > Create;
+  if (!id) query = query.insert([{ ...newCabin }]);
+
+  const { data, error } = await query.select().single();
+
+  if (error) {
+    console.error(error);
+    throw new Error("Cabins could not be created");
+  }
+
+  return data;
+}
+
 export async function deleteBooking(id) {
   // REMEMBER RLS POLICIES
   const { data, error } = await supabase.from("bookings").delete().eq("id", id);
